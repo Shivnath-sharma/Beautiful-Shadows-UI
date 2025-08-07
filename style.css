@@ -1,0 +1,9 @@
+/* Custom styles that Tailwind can't easily handle */
+@layer components {
+    /* Color picker inputs are positioned absolutely over the circle/square */
+    input[type="color"] {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+}

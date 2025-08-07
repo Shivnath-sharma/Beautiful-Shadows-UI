@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beautiful Shadows UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    input[type="color"] {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+    .control-btn {
+      transition: all 0.2s ease;
+    }
+    .control-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    #shadowBox {
+      aspect-ratio: 1/1;
+    }
+  </style>
+</head>
+<body class="font-sans flex flex-col justify-center items-center min-h-screen m-0 p-4 transition-colors duration-300">
+  <div class="max-w-md w-full space-y-6">
+    <!-- Website name -->
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-1">Beautiful Shadows UI</h1>
+      <p class="text-gray-600 text-sm">Customize your beautiful shadow box</p>
+    </div>
+
+    <!-- The shadowed box -->
+    <div id="shadowBox" class="w-64 bg-pink-400 rounded-lg shadow-[10px_10px_30px_rgba(255,143,171,0.4)] transition-all duration-300 mx-auto"></div>
+
+    <!-- Controls box -->
+    <div class="bg-white p-4 rounded-xl shadow-md space-y-4">
+      <!-- Box Controls -->
+      <div>
+        <h2 class="text-base font-semibold text-gray-700 mb-2 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd" />
+          </svg>
+          Box Controls
+        </h2>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-600">Box Color</span>
+            <div class="relative w-10 h-10">
+              <div id="boxColorBtn" class="w-full h-full rounded-lg bg-pink-400 border border-gray-200 control-btn shadow-sm"></div>
+              <input type="color" id="boxColorPicker" value="#ff8fab" />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-600">Shadow Color</span>
+            <div class="relative w-10 h-10">
+              <div id="shadowColorBtn" class="w-full h-full rounded-lg bg-pink-300 border border-gray-200 control-btn shadow-sm"></div>
+              <input type="color" id="shadowColorPicker" value="#ff8fab" />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-600">Shadow Density</span>
+            <input type="range" id="shadowDensity" min="0" max="1" step="0.1" value="0.4" class="w-24 accent-pink-500" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Controls -->
+      <div>
+        <h2 class="text-base font-semibold text-gray-700 mb-2 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+          </svg>
+          Background Controls
+        </h2>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-600">Solid Color</span>
+            <div class="relative w-10 h-10">
+              <div id="bgColorBtn" class="w-full h-full rounded-full bg-pink-100 border border-gray-200 control-btn shadow-sm"></div>
+              <input type="color" id="bgColorPicker" value="#f5f6ff" />
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-600">Gradient Colors</span>
+            <div class="flex gap-2">
+              <div class="relative w-8 h-8">
+                <div id="gradientColor1Btn" class="w-full h-full rounded-full bg-pink-200 border border-gray-200 control-btn"></div>
+                <input type="color" id="gradientColor1Picker" value="#fce4ec" />
+              </div>
+              <div class="relative w-8 h-8">
+                <div id="gradientColor2Btn" class="w-full h-full rounded-full bg-purple-200 border border-gray-200 control-btn"></div>
+                <input type="color" id="gradientColor2Picker" value="#f3e5ff" />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-600">Background Type</span>
+            <div class="flex gap-2">
+              <button id="solidBgBtn" class="px-3 py-1 text-xs bg-pink-500 text-white rounded-full">Solid</button>
+              <button id="gradientBgBtn" class="px-3 py-1 text-xs bg-pink-500 text-white rounded-full">Gradient</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reset Button (now inside box) -->
+      <div class="pt-2 flex justify-center">
+        <button id="resetBtn" class="text-sm bg-gradient-to-r from-pink-500 to-purple-500 text-white px-5 py-1.5 rounded-full cursor-pointer font-semibold shadow hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+          </svg>
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
