@@ -74,7 +74,7 @@
 <body class="flex flex-col min-h-screen transition-colors duration-300">
   
   <!-- Main content: shadow box centered -->
-  <div class="flex-grow flex justify-center items-center">
+  <div class="flex-grow flex justify-center items-center pb-20 ">
     <div id="shadowBox" class="w-56 bg-pink-400 rounded-lg shadow-[10px_10px_30px_rgba(255,143,171,0.4)]"></div>
   </div>
 
@@ -89,8 +89,8 @@
     </div>
 
     <!-- Box & Shadow Header -->
-    <div class="flex justify-between items-center cursor-pointer py-1" id="boxShadowHeader">
-      <div class="flex items-center gap-1 text-sm font-semibold text-gray-700">
+    <div class="flex justify-between items-center cursor-pointer py-1  " id="boxShadowHeader">
+      <div class="flex items-center gap-1 text-sm font-semibold text-gray-700 ">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-pink-500" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd" />
         </svg>
@@ -103,14 +103,14 @@
     <div id="boxShadowContent" class="collapse-content expanded grid grid-cols-2 gap-2">
       <div class="flex flex-col items-center">
         <span class="label-sm">Box</span>
-        <div class="relative w-7 h-7">
+        <div class="relative min-w-[28px] min-h-[28px]">
           <div id="boxColorBtn" class="w-full h-full rounded bg-pink-400 border cursor-pointer"></div>
           <input type="color" id="boxColorPicker" value="#ff8fab" />
         </div>
       </div>
       <div class="flex flex-col items-center">
         <span class="label-sm">Shadow</span>
-        <div class="relative w-7 h-7">
+        <div class="relative min-w-[28px] min-h-[28px]">
           <div id="shadowColorBtn" class="w-full h-full rounded bg-pink-300 border cursor-pointer"></div>
           <input type="color" id="shadowColorPicker" value="#ff8fab" />
         </div>
@@ -148,14 +148,14 @@
     <div id="backgroundContent" class="collapse-content expanded grid grid-cols-2 gap-2">
       <div class="flex flex-col items-center">
         <span class="label-sm">Solid</span>
-        <div class="relative w-7 h-7">
+        <div class="relative min-w-[28px] min-h-[28px]">
           <div id="bgColorBtn" class="w-full h-full rounded-full bg-pink-100 border cursor-pointer"></div>
           <input type="color" id="bgColorPicker" value="#f5f6ff" />
         </div>
       </div>
       <div class="flex flex-col items-center">
         <span class="label-sm">Grad 1</span>
-        <div class="relative w-7 h-7">
+        <div class="relative min-w-[28px] min-h-[28px]">
           <div id="gradientColor1Btn" class="w-full h-full rounded-full bg-pink-200 border cursor-pointer"></div>
           <input type="color" id="gradientColor1Picker" value="#fce4ec" />
         </div>
@@ -166,7 +166,7 @@
       </div>
       <div class="flex flex-col items-center">
         <span class="label-sm">Grad 2</span>
-        <div class="relative w-7 h-7">
+        <div class="relative min-w-[28px] min-h-[28px]">
           <div id="gradientColor2Btn" class="w-full h-full rounded-full bg-purple-200 border cursor-pointer"></div>
           <input type="color" id="gradientColor2Picker" value="#f3e5ff" />
         </div>
