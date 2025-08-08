@@ -15,13 +15,6 @@
       left: 0;
       cursor: pointer;
     }
-    .control-btn {
-      transition: all 0.2s ease;
-    }
-    .control-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
     #shadowBox {
       aspect-ratio: 1/1;
       transition: all 0.3s ease;
@@ -50,6 +43,32 @@
     .rotate-180 {
       transform: rotate(180deg);
     }
+    /* Unified button styling */
+    .btn {
+      padding-left: 1.40rem;
+      padding-right: 1.40rem;
+      padding-top: 0.60rem;
+      padding-bottom: 0.60rem;
+      font-size: 0.80rem;
+      font-weight: 600;
+      color: #fff;
+      border-radius: 9999px;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+      transition: all 0.2s ease-out;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .btn:active {
+      transform: scale(0.95);
+    }
+    .btn-pink {
+      background: linear-gradient(to right, #ec4899, #a21caf);
+    }
+    .btn-green {
+      background: linear-gradient(to right, #22c55e, #10b981);
+    }
   </style>
 </head>
 <body class="flex flex-col min-h-screen transition-colors duration-300">
@@ -60,7 +79,7 @@
   </div>
 
   <!-- Controls panel at bottom, centered -->
-<div class="max-w-md w-full mx-auto bg-white p-2 rounded-xl shadow-md space-y-2 mb-4">
+  <div class="max-w-md w-full mx-auto bg-white p-2 rounded-xl shadow-md space-y-3 mb-4">
     <!-- Title inside box -->
     <div class="text-center mb-1">
       <h1 class="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">
@@ -85,14 +104,14 @@
       <div class="flex flex-col items-center">
         <span class="label-sm">Box</span>
         <div class="relative w-7 h-7">
-          <div id="boxColorBtn" class="w-full h-full rounded bg-pink-400 border control-btn"></div>
+          <div id="boxColorBtn" class="w-full h-full rounded bg-pink-400 border cursor-pointer"></div>
           <input type="color" id="boxColorPicker" value="#ff8fab" />
         </div>
       </div>
       <div class="flex flex-col items-center">
         <span class="label-sm">Shadow</span>
         <div class="relative w-7 h-7">
-          <div id="shadowColorBtn" class="w-full h-full rounded bg-pink-300 border control-btn"></div>
+          <div id="shadowColorBtn" class="w-full h-full rounded bg-pink-300 border cursor-pointer"></div>
           <input type="color" id="shadowColorPicker" value="#ff8fab" />
         </div>
       </div>
@@ -130,14 +149,14 @@
       <div class="flex flex-col items-center">
         <span class="label-sm">Solid</span>
         <div class="relative w-7 h-7">
-          <div id="bgColorBtn" class="w-full h-full rounded-full bg-pink-100 border control-btn"></div>
+          <div id="bgColorBtn" class="w-full h-full rounded-full bg-pink-100 border cursor-pointer"></div>
           <input type="color" id="bgColorPicker" value="#f5f6ff" />
         </div>
       </div>
       <div class="flex flex-col items-center">
         <span class="label-sm">Grad 1</span>
         <div class="relative w-7 h-7">
-          <div id="gradientColor1Btn" class="w-full h-full rounded-full bg-pink-200 border control-btn"></div>
+          <div id="gradientColor1Btn" class="w-full h-full rounded-full bg-pink-200 border cursor-pointer"></div>
           <input type="color" id="gradientColor1Picker" value="#fce4ec" />
         </div>
       </div>
@@ -148,24 +167,20 @@
       <div class="flex flex-col items-center">
         <span class="label-sm">Grad 2</span>
         <div class="relative w-7 h-7">
-          <div id="gradientColor2Btn" class="w-full h-full rounded-full bg-purple-200 border control-btn"></div>
+          <div id="gradientColor2Btn" class="w-full h-full rounded-full bg-purple-200 border cursor-pointer"></div>
           <input type="color" id="gradientColor2Picker" value="#f3e5ff" />
         </div>
       </div>
-      <div class="col-span-2 flex justify-center gap-1">
-        <button id="solidBgBtn" class="px-2 py-0.5 text-xs bg-pink-500 text-white rounded-full">Solid</button>
-        <button id="gradientBgBtn" class="px-2 py-0.5 text-xs bg-pink-500 text-white rounded-full">Gradient</button>
+      <div class="col-span-2 flex justify-center gap-2">
+        <button id="solidBgBtn" class="btn btn-pink">Solid</button>
+        <button id="gradientBgBtn" class="btn btn-pink">Gradient</button>
       </div>
     </div>
 
     <!-- Action Buttons -->
-    <div class="flex justify-center gap-1 pt-1">
-      <button id="copyCssBtn" class="text-xs bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-0.5 rounded-full font-semibold shadow hover:shadow-md transition-all">
-        Copy CSS
-      </button>
-      <button id="resetBtn" class="text-xs bg-gradient-to-r from-pink-500 to-purple-500 text-white px-2 py-0.5 rounded-full font-semibold shadow hover:shadow-md transition-all">
-        Reset
-      </button>
+    <div class="flex justify-center gap-2 pt-1">
+      <button id="copyCssBtn" class="btn btn-green">Copy CSS</button>
+      <button id="resetBtn" class="btn btn-pink">Reset</button>
     </div>
   </div>
 
